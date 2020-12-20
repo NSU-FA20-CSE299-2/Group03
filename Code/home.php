@@ -100,6 +100,115 @@ $result10 = mysqli_query($conn,"SELECT COUNT(*) FROM car_table WHERE status = 'B
   </header>
   <!-- header-end -->
 
+  <!-- slider_area_start -->
+  <div class="slider_area">
+      <div class="single_slider  d-flex align-items-center slider_bg_1">
+          <div class="container">
+              <div class="row align-items-center">
+                  <div class="col-lg-7 col-md-6">
+                      <div class="slider_text">
+
+                        <?php
+            include_once 'database.php';
+            $query = "SELECT COUNT( *) as Number
+                         FROM car_table";
+            $result6 = mysqli_query($conn,$query);
+            while ($row = $result6->fetch_assoc()) {
+              $rxx = $row["Number"];
+
+            }
+            ?>
+
+
+
+            <?php
+include_once 'database.php';
+$query = "SELECT COUNT(*) as NUM FROM car_table WHERE status = 'Booked'";
+$result10 = mysqli_query($conn,$query);
+while ($row = $result10->fetch_assoc()) {
+  $st = $row["NUM"];
+
+}
+?>
+                          <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s"><?php echo $rxx;?>+ Cars listed</h5>
+                        <h5 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".2s">  <?php echo $st;?>+ Cars booked</h5>
+                           <p>logged in as <br><?php echo $email;?></p>
+                          <h3 class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".3s">Book Now an Affordable Car With Excellent Value For Money</h3>
+
+                          <div class="sldier_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".5s">
+                              <a href="browse_cars.php" class="boxed-btn3">View all Cars</a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+  </div>
+  <!-- slider_area_end -->
+  <div class="container">
+      <br />
+      <br />
+      <br />
+      <h2 align="center">Search</h2><br />
+      <div class="form-group">
+        <div class="input-group">
+          <input type="text" name="search_text" id="search_text" placeholder="Search by Company Details" class="form-control" />
+        </div>
+      </div>
+      <br />
+      <div id="result"></div>
+    </div>
+    <div style="clear:both"></div>
+    <br />
+
+    <br />
+    <br />
+    <br />
+
+    <!-- popular_catagory_area_start  -->
+    <div class="popular_catagory_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section_title mb-40">
+                        <h3>Popolar Categories</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+      <?php
+          $i=0;
+          while($row = mysqli_fetch_array($result3)) {
+          ?>
+                <div class="col-lg-4 col-xl-3 col-md-6">
+                    <div class="single_catagory">
+                        <a href="browse_cars.php"><h4><?php echo $row["carCatagory"]; $jc = $row["carCatagory"]; ?></h4></a>
+
+              <?php
+              include_once 'database.php';
+              $query = "SELECT COUNT(carCatagory) FROM car_table where `carCatagory` ='$jc'";
+              $result4 = mysqli_query($conn,$query);
+              while ($row = $result4->fetch_assoc()) {
+                $rx = $row["COUNT(carCatagory)"];
+
+              }
+              ?>
+
+                        <p> <span><?php echo $rx;?></span> Available Cars</p>
+                    </div>
+                </div>
+                 <?php
+            $i++;
+            }
+            ?>
+            </div>
+
+        </div>
+    </div>
+    <!-- popular_catagory_area_end  -->
+
   <!-- link that opens popup -->
   <!-- JS here -->
 
