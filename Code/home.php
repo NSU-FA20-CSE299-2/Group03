@@ -209,6 +209,134 @@ while ($row = $result10->fetch_assoc()) {
     </div>
     <!-- popular_catagory_area_end  -->
 
+    <div class="job_listing_area">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="section_title">
+                            <h3>Cars Listing</h3>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="job_lists">
+                    <div class="row" >
+                            <?php
+                        $i=0;
+                        while($row = mysqli_fetch_array($result)) {
+                             $id = $row['carId'];
+                               $cata = $row['carCatagory'];
+                               $cname = $row['companyName'];
+                                $seats = $row['seats'];    $cost = $row['cost'];
+                                    $address = $row['address'];
+                                    $status = $row['status'];
+                                     $rating = $row['rating'];
+                                     $author = $row['author'];
+                                     $model = $row['model'];
+
+
+
+
+                                     echo '<div class="col-lg-11 col-md-12">
+                              <a href="car_details.php?id='.$row['carId'].'"><h4 style="margin-top: 50px;">'.$row['model'].'</h4></a>
+                                          <div class="single_jobs white-bg d-flex justify-content-between">
+                                              <div class="jobs_left d-flex align-items-center">
+                                                  <div class="thumb" >
+                                                  <a href="car_details.php?id='.$row['carId'].'"><img class="card-img-top" src="data:image/png;base64,'.base64_encode($row['picFile']).'" alt="Card image">
+                                                  </div>
+                                                  <div class="card-body">
+
+                                                  </div>
+                                                  <div class="jobs_conetent">
+                                                  <a href="car_details.php?id='.$row['carId'].'"><h4>'.$row['companyName'].'</h4></a>
+                                                      <div class="links_locat d-flex align-items-center">
+                                                          <div class="location">
+                                                              <p> <i class="fa fa-map-marker"></i><span class="badge badge-secondary"> '.$row['address'].'</span></p>
+                                                          </div>
+
+                                                          <div class="location">
+                                                                      <p> <i class="fa fa-star" aria-hidden="true"></i> Rating :<span class="badge badge-warning">'.$row['rating'].'</span></p>
+                                                                  </div>
+                                                                  <div class="location">
+                                                                      <p> <i class="fa fa-user" aria-hidden="true"></i> Posted by :<span class="badge badge-pill">'.$row['author'].'</span></p>
+                                                                  </div>
+                                                                  <div class="location">
+                                                                   <a href="car_details.php?id='.$row['carId'].'" class="btn btn-success">Book Now</a>
+
+                                                  </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+
+                                          </div>
+                                      </div>';
+                                        }
+
+                                                      ?>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="top_companies_area">
+            <div class="container">
+                <div class="row align-items-center mb-40">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="section_title">
+                            <h3>Top cars</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4">
+                        <div class="brouse_job text-right">
+                            <a href="browse_cars.php" class="boxed-btn4">Browse More cars</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"><?php
+    					$i=0;
+    					while($row = mysqli_fetch_array($result5)) {
+    						$cn = $row["companyName"];
+    					?>
+                    <div class="col-lg-4 col-xl-3 col-md-6">
+
+
+
+                        <div class="single_company">
+                            <div class="thumb">
+                                <img src="img/svg_icon/5.svg" alt="">
+                            </div>
+
+
+    						<?php
+    							include_once 'database.php';
+    							$query = "SELECT COUNT(carCatagory) FROM car_table where `companyName` ='$cn'";
+    							$result4 = mysqli_query($conn,$query);
+    							while ($row = $result4->fetch_assoc()) {
+    								$rx = $row["COUNT(carCatagory)"];
+
+    							}
+    							?>
+
+
+                            <a href="browse_cars.php"><h3><?php echo $cn?></h3></a>
+                            <p> <span><?php echo $rx;?></span> Available cars</p>
+                        </div>
+
+
+                    </div>
+    				<?php
+    						$i++;
+    						}
+    						?>
+                </div>
+            </div>
+        </div>
+
+
   <!-- link that opens popup -->
   <!-- JS here -->
 
