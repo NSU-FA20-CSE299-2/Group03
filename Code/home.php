@@ -335,7 +335,121 @@ while ($row = $result10->fetch_assoc()) {
                 </div>
             </div>
         </div>
+        <!-- job_searcing_wrap  -->
+        <div class="job_searcing_wrap overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 offset-lg-1 col-md-6">
+                        <div class="searching_text">
+                            <h3>Looking for a car?</h3>
+                            <p>We have great offers for daily, weekly and long term rentals. Find the cheapest prices online, for your future Car Rental in 4 quick easy steps. Book now at the lowest possible rates only with a small down payment and pay the rest when you pick up the car. </p>
+                            <a href="browse_cars.php" class="boxed-btn3">Browse car</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 offset-lg-1 col-md-6">
+                        <div class="searching_text">
+                            <h3>Want to income some money?</h3>
+                            <p>You can share your idle car and can make some money. All you have to do is list your car in our website.</p>
+                            <a href="post_review.php" class="boxed-btn3">List a car</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+          </div>
+        </div>
+
+                <div class="review_details_area">
+            <div class="container">
+              <div class="review_form white-bg">
+        <img class="wave3" src="img/feedback.svg">
+
+                            <h4>Give us your valuable feedback</h4>
+                            <form action="post_data.php" method="post">
+                                <div class="row">
+
+
+
+                                        <div class="col-md-11">
+                                    <div class="input_field">
+                                            <textarea name="message" id="" cols="30" rows="10" placeholder="How can we improve?" required="true"></textarea>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-4">
+                                        <div class="input_field">
+                                            <input type="text" name="name" placeholder="Give your name" required="true">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-12">
+                                        <div class="submit_btn">
+                                            <button id="spost" name="save_feedback"  class="btn btn-outline-success w-100" value="submit" type="submit">Save feedback</button>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </form>
+
+        </div>
+
+                        </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- testimonial_area  -->
+            <div class="testimonial_area  ">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="section_title text-center mb-40">
+                                <h3>Testimonial</h3>
+                            </div>
+                        </div>
+                        <div class="col-xl-12">
+                            <div class="testmonial_active owl-carousel">
+
+
+                              <?php
+                  $i=0;
+                  while($row = mysqli_fetch_array($result2)) {
+                  ?>
+                                <div class="single_carousel">
+                                    <div class="row">
+                                        <div class="col-lg-11">
+                                            <div class="single_testmonial d-flex align-items-center">
+                                                <div class="thumb">
+                                                    <img src="img/testmonial/author.png" alt="">
+                                                    <div class="quote_icon">
+                                                        <i class="Flaticon flaticon-quote"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="info">
+                                                  <p><?php echo $row["message"]; ?></p>
+                                                    <span>- <?php echo $row["name"]; ?></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                     <?php
+                    $i++;
+                    }
+                    ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- /testimonial_area  -->
 
   <!-- link that opens popup -->
   <!-- JS here -->
