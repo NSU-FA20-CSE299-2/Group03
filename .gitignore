@@ -1,2 +1,12 @@
 /vendor
 /node_modules
+/composer.json
+/composer.lock
+/bootstrap
+/css
+/fonts
+/images
+/img
+/jquery
+/js
+/src
