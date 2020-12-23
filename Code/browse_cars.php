@@ -142,6 +142,178 @@ $result = mysqli_query($conn,"SELECT * FROM car_table");
         </div>
           </div>
 
+          <div class="container-fluid">
+
+                <div class="job_listing_area">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="section_title p-5">
+                                <h3>Car Listing</h3>
+                            </div>
+                        </div>
+
+                    </div>
+
+                     <div class="job_lists">
+                        <div class="row" >
+                                <?php
+                            $i=0;
+                            while($row = mysqli_fetch_array($result)) {
+                              $id = $row['carId'];
+                                $cata = $row['carCatagory'];
+                                $cname = $row['companyName'];
+                                 $seats = $row['seats'];    $cost = $row['cost'];
+                                     $address = $row['address'];
+                                     $status = $row['status'];
+                                      $rating = $row['rating'];
+                                      $author = $row['author'];
+                                      $model = $row['model'];
+                                      $number= $row['number'];
+
+
+
+                           echo '<div class="col-lg-11 col-md-12">
+              <a href="car_details.php?id='.$row['carId'].'"><h4 style="margin-top: 50px;">'.$row['model'].'</h4></a>
+                                <div class="single_jobs white-bg d-flex justify-content-between">
+                                    <div class="jobs_left d-flex align-items-center">
+                                        <div class="thumb" >
+                                        <a href="car_details.php?id='.$row['carId'].'"><img class="card-img-top" src="data:image/png;base64,'.base64_encode($row['picFile']).'" alt="Card image">
+                                        </div>
+                                        <div class="card-body">
+
+                                        </div>
+                                        <div class="jobs_conetent">
+                                    <a href="car_details.php?id='.$row['carId'].'"><h4>'.$row['companyName'].'</h4></a>
+                                            <div class="links_locat d-flex align-items-center">
+                                                <div class="location">
+                                                    <p> <i class="fa fa-map-marker"></i><span class="badge badge-secondary"> '.$row['address'].'</span></p>
+                                                </div>
+
+                                                <div class="location">
+                                                            <p> <i class="fa fa-star" aria-hidden="true"></i> Rating :<span class="badge badge-warning">'.$row['rating'].'</span></p>
+                                                        </div>
+                                                        <div class="location">
+                                                            <p> <i class="fa fa-user" aria-hidden="true"></i> Posted by :<span class="badge badge-pill">'.$row['author'].'</span></p>
+                                                        </div>
+                                                        <div class="location">
+                                                         <a href="car_details.php?id='.$row['carId'].'" class="btn btn-success">Book Now</a>
+
+                                        </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>';
+                              }
+
+                                            ?>
+
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <!-- job_listing_area_end  -->
+          </div>
+
+
+
+
+              </div>
+            </div>
+
+          </body>
+
+          <!-- footer start -->
+          <footer class="footer">
+              <div class="footer_top" style="padding: 50px 0px;">
+                  <div class="container">
+                      <div class="row">
+                          <div class="col-xl-3 col-md-6 col-lg-3">
+                              <div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+                                  <div class="footer_logo">
+                                      <a href="#">
+
+                                      </a>
+                                  </div>
+                                  <p>
+                                     North South University <br>
+                                      #Plot 15 <br>
+                                      ROAD NO 8, BLOCK B<br>
+                                      BASHUNDHARA R/A, DHAKA <br>
+                                      +880-2-55668200 <br>
+                                  </p>
+                                  <div class="socail_links">
+                                      <ul>
+                                          <li>
+                                              <a href="www.facebook.com">
+                                                  <i class="fa fa-facebook"></i>
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="www.google.com">
+                                                  <i class="fa fa-google-plus"></i>
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="www.twitter.com">
+                                                  <i class="fa fa-twitter"></i>
+                                              </a>
+                                          </li>
+                                          <li>
+                                              <a href="www.instagram.com">
+                                                  <i class="fa fa-instagram"></i>
+                                              </a>
+                                          </li>
+                                      </ul>
+                                  </div>
+
+                              </div>
+                          </div>
+
+
+
+                          <div class="col-xl-4 col-md-6 col-lg-4">
+                              <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+                                  <h3 class="footer_title">
+                                      Subscribe
+                                  </h3>
+                                  <form action="post_data.php" method="post" class="newsletter_form">
+                                      <input type="text" name="email" placeholder="Enter your mail">
+                                      <button type="submit" value="submit" name="save_subscribe">Subscribe</button>
+                                  </form>
+                                  <p class="newsletter_text">Subcribe your email for more exciting deals and offers!!</p>
+                              </div>
+                          </div>
+
+                          <div class="col-xl-3 col-md-5 col-lg-3">
+                              <div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+
+
+                                   <img width="60%" src="img/6.svg" alt="">
+                              </div>
+                          </div>
+
+
+                  </div>
+              </div>
+              <div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+                  <div class="container">
+                      <div class="footer_border"></div>
+                      <div class="row">
+                          <div class="col-xl-12">
+                              <p class="copy_right text-center">
+
+                                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Car Rental
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
 
 
 
