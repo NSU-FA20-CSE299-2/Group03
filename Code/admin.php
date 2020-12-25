@@ -153,7 +153,174 @@ else{
       </div>
 
 
+			<div class="container-fluid">
 
+		        <div class="job_listing_area">
+		        <div class="container">
+		            <div class="row align-items-center">
+		                <div class="col-lg-6">
+		                    <div class="section_title p-4">
+		                        <h3>Users Listing</h3>
+		                    </div>
+		                </div>
+
+		            </div>
+		            <div class="job_lists">
+		                <div class="row">
+
+		                   <?php
+		                    $i=0;
+		                    while($row = mysqli_fetch_array($result3)) {
+		                    ?>
+
+							  <div class="col-lg-12 col-md-12">
+		                        <div class="single_jobs white-bg d-flex justify-content-between">
+		                            <div class="jobs_left d-flex align-items-center">
+
+		                                    <img src="img/person.png" alt="">
+
+		                                <div class="jobs_conetent">
+		                             <h4><?php echo $row["name"];?></h4>
+		                                    <div class="links_locat d-flex align-items-center">
+		                                      <div class="location">
+		                                            <p> <i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $row["email"]; ?></p>
+		                                        </div>
+
+		                                        <div class="location">
+		                                            <p> <i class="fa fa-key" aria-hidden="true"></i> <?php echo $row["password"]; ?></p>
+		                                        </div>
+
+
+		                                    </div>
+		                                </div>
+		                            </div>
+		                            <div class="jobs_right">
+		                                <div class="apply_now">
+		                                   <form action="deleteuser.php?id=<?php echo $row["email"]; ?>" method="post">
+
+																						<input  class='btn btn-danger' type="submit" name="submit" value="Delete">
+																					</form>
+
+
+		                                </div>
+
+		                            </div>
+		                        </div>
+		                    </div>
+		                    <?php
+		                        $i++;
+		                        }
+		                        ?>
+
+
+
+		            </div>
+		        </div>
+		    </div>
+
+
+
+
+		    <div class="job_listing_area ">
+		        <div class="container">
+		            <div class="row align-items-center">
+		                <div class="col-lg-6">
+		                    <div class="section_title p-4">
+		                        <h3>Car Listing</h3>
+		                    </div>
+		                </div>
+
+		            </div>
+		            <div class="job_lists">
+		                <div class="row" >
+		                        <?php
+		                    $i=0;
+		                    while($row = mysqli_fetch_array($result)) {
+		                    ?>
+
+		                    <div class="col-lg-10 col-md-12">
+		                        <div class="single_jobs white-bg d-flex justify-content-between">
+		                            <div class="jobs_left d-flex align-items-center">
+																	<div class="thumb" >
+																<a href='car_details.php?id=<?php echo $row["carId"];?>'> <img class='card-img-top' src="data:image/png;base64,<?php echo base64_encode($row["picFile"]);?> " alt='Card image'>
+																	</div>
+		                                <div class="jobs_conetent">
+		                                    <a href='car_details.php?id=<?php echo $row["carId"];?>'><h4><?php echo $row["model"]; ?></h4></a>
+		                                    <div class="links_locat d-flex align-items-center">
+		                                        <div class="location">
+		                                            <p> <i class="fa fa-map-marker"></i><span class="badge badge-secondary"> <?php echo $row["companyName"]; ?></span></p>
+		                                        </div>
+
+		                                        <div class="location">
+		                                                    <p> <i class="fa fa-star" aria-hidden="true"></i> Rating :<span class="badge badge-warning"><?php echo $row["rating"]; ?></span></p>
+		                                                </div>
+		                                                <div class="location">
+		                                                    <p> <i class="fa fa-user" aria-hidden="true"></i> Posted by :<span class="badge badge-warning"><?php echo $row["author"]; ?></span></p>
+		                                                </div>
+																										<div class="location">
+		                                                    <p> <i class="fa fa-user" aria-hidden="true"></i> Car Status <span class="badge badge-primary"><?php echo $row["status"]; ?></span></p>
+		                                                </div>
+		                                                <div class="location">
+																											<form action='deletepost.php?id=<?php echo $row["carId"];?>' method="post">
+
+																												<input  class='btn btn-danger' type="submit" name="submit" value="Delete">
+																											</form>
+																											<form action='updatepost.php?id=<?php echo $row["carId"];?>' method="post">
+
+																												<input  class='btn btn-success' type="submit" name="submit" value="Update">
+																											</form>
+
+		                                </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+
+		                        </div>
+		                    </div>
+		                     <?php
+		                        $i++;
+		                        }
+		                        ?>
+
+
+		                </div>
+		            </div>
+
+																						<div class="col-lg-6 p-4">
+																								<div class="section_title">
+																										<h3>Subscribers</h3>
+																								</div>
+																						</div>
+
+																		<?php
+
+																		echo "<table border='5'>
+
+																		<tr>
+																		<th>No</th>
+																		<th>Email Id</th>
+																		</tr>";
+
+																		while($row = mysqli_fetch_array($result11))
+																		{
+																		echo "<tr>";
+																		echo "<td>" . $row['id'] . "</td>";
+																		echo "<td>" . $row['email'] . "</td>";
+																		echo "</tr>";
+																		}
+																		echo "</table>";?>
+
+		        </div>
+		    </div>
+
+
+		      </div>
+		    </div>
+
+
+
+
+		  </body>
 
 		<script src="js/vendor/modernizr-3.5.0.min.js"></script>
     <script src="js/vendor/jquery-1.12.4.min.js"></script>
