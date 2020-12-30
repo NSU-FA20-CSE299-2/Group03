@@ -148,7 +148,67 @@ if (isset($_SESSION['email'])) {
 
                                 <div class="col-md-2">
 
+                                  <select class="form-control" name="catagory" placeholder="Car Category">
+                                                <option>Sedan</option>
+                                                <option>COUPE</option>
+                                                <option>SPORTS CAR</option>
+                                                <option>STATION WAGON</option>
+                                                <option>SUV</option>
+                                                <option>Minivan</option>
+                                                <option>Micro</option>
+                                                <option>Pickup Truck</option>
+                                                <option>Big Truck</option>
+                                                <option>Others</option>
+                                            </select>
 
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="input_field">
+                                                           <input type="text" name="company_name" placeholder="Company name" onkeypress="return isChar(event)" >
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4">
+                                                    <div class="input_field">
+                                                           <input type="text" name="model" placeholder="Model name">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="input_field">
+                                                            <input type="number" name="seats" min="0" placeholder="Seats" onkeypress="return isNumber(event)">
+                                                    </div>
+                                                </div>
+                                                 <div class="col-md-2">
+                                                    <div class="input_field">
+                                                            <input type="number" name="cost" min="0" placeholder="Rent" onkeypress="return isNumber(event)">
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                   <div class="input_field">
+                                                           <input type="number" name="number" min="0" placeholder="Phone Number">
+                                                   </div>
+                                               </div>
+                                                <div class="col-md-6">
+                                                    <div class="input_field">
+                                                           <input type="text" name="address" placeholder="Car location">
+                                                    </div>
+                                                </div>
+
+
+
+                                                <div class="col-md-2">
+                                                  <select class="form-control" name="rating" placeholder="Car rating">
+                                                                <option>Excellent</option>
+                                                                <option>Good</option>
+                                                                <option>Average</option>
+                                                                <option>Bellow Average</option>
+                                                                <option>Bad</option>
+
+
+                                                            </select>
+
+                                                </div>
 
 
 
