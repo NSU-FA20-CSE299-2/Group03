@@ -121,7 +121,139 @@ $result = mysqli_query($conn,"SELECT * FROM car_table where carId = $carId");
 
 
 
+           <div class="review_details_area">
+           <div class="container">
 
+            <div class="review_form white-bg">
+           <img class="wave" src="img/7.svg">
+
+                          <h4>Update your car</h4>
+               <?php
+                      $i=0;
+                      while($row = mysqli_fetch_array($result)) {
+                        $id = $row['carId'];
+                                                      $cata = $row['carCatagory'];
+                                                      $cname = $row['companyName'];
+                                                       $seats = $row['seats'];
+                                                        $cost = $row['cost'];
+                                                           $address = $row['address'];
+                                                           $status = $row['status'];
+                                                            $rating = $row['rating'];
+                                                            $author = $row['author'];
+           $model = $row['model'];
+
+                      ?>
+
+                          <form method="post" name = "reviewform" onsubmit="return validateform()" action="updateReview.php?id=<?php echo $row["carId"];?>" >
+
+                              <div class="row">
+
+                                  <div class="col-md-2">
+
+                    <select class="form-control" name="catagory" placeholder="Car Category">
+                      <option>Sedan</option>
+                      <option>COUPE</option>
+                      <option>SPORTS CAR</option>
+                      <option>STATION WAGON</option>
+                      <option>SUV</option>
+                      <option>Minivan</option>
+                      <option>Micro</option>
+                      <option>Pickup Truck</option>
+                      <option>Big Truck</option>
+                      <option>Others</option>
+                              </select>
+
+                                  </div>
+
+
+
+                                  <div class="col-md-4">
+                                      <div class="input_field">
+                                             <input value='<?php echo $row["companyName"];?>' type="text" name="company_name" placeholder="Company name" onkeypress="return isChar(event)">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-4">
+                                      <div class="input_field">
+                                              <input value='<?php echo $row["model"];?>' type="text" name="model" placeholder="Car model">
+                                      </div>
+                                  </div>
+                                   <div class="col-md-2">
+                                      <div class="input_field">
+                                              <input  value='<?php echo $row["seats"];?>' min="0" type="number" name="seats" placeholder="Seats" onkeypress="return isNumber(event)">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="input_field">
+                                             <input  value='<?php echo $row["cost"];?>' min="0" type="number" name="cost" placeholder="Cost per day" onkeypress="return isNumber(event)">
+                                      </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                      <div class="input_field">
+                                             <input  value='<?php echo $row["number"];?>' type="number" name="number" placeholder="Phone Number">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-4">
+                                      <div class="input_field">
+                                          <input  value='<?php echo $row["address"];?>' type="text" name="address" placeholder="Car location">
+                                      </div>
+                                  </div>
+
+                                  <div class="col-md-2">
+
+                                        <select class="form-control" name="status" placeholder="Car status">
+                                          <option>Available for rent</option>
+                                          <option>Booked</option>
+
+                                                  </select>
+
+                                  </div>
+                                  <div class="col-md-3">
+
+                                        <select class="form-control" name="rating" placeholder="Car rating">
+                                                      <option>Excellent</option>
+                                                      <option>Good</option>
+                                                      <option>Average</option>
+                                                      <option>Bellow Average</option>
+                                                      <option>Bad</option>
+
+
+                                                  </select>
+
+
+                                  </div>
+
+
+
+
+
+
+
+
+                                  <div class="col-md-12">
+                                      <div class="submit_btn">
+                                          <button id="spost"  class="btn btn-outline-success w-100" name = "submit" type="submit">Update Car</button>
+
+                                      </div>
+                                  </div>
+
+                              </div>
+
+                          </form>
+
+           </div>
+           <?php
+                          $i++;
+                          }
+                          ?>
+
+                      </div>
+
+           </div>
+           </div>
+           </div>
+
+           </body>
 
 
     </script>
