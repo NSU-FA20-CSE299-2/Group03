@@ -170,7 +170,95 @@ else{
 
   </body>
 
+	<!-- footer start -->
+	<footer class="footer">
+			<div class="footer_top" style="padding: 50px 0px;">
+					<div class="container">
+							<div class="row">
+									<div class="col-xl-3 col-md-6 col-lg-3">
+											<div class="footer_widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s">
+													<div class="footer_logo">
+															<a href="#">
 
+															</a>
+													</div>
+													<p>
+														 North South University <br>
+															#Plot 15 <br>
+															ROAD NO 8, BLOCK B<br>
+															BASHUNDHARA R/A, DHAKA <br>
+															+880-2-55668200 <br>
+													</p>
+													<div class="socail_links">
+															<ul>
+																	<li>
+																			<a href="www.facebook.com">
+																					<i class="fa fa-facebook"></i>
+																			</a>
+																	</li>
+																	<li>
+																			<a href="www.google.com">
+																					<i class="fa fa-google-plus"></i>
+																			</a>
+																	</li>
+																	<li>
+																			<a href="www.twitter.com">
+																					<i class="fa fa-twitter"></i>
+																			</a>
+																	</li>
+																	<li>
+																			<a href="www.instagram.com">
+																					<i class="fa fa-instagram"></i>
+																			</a>
+																	</li>
+															</ul>
+													</div>
+
+											</div>
+									</div>
+
+
+
+									<div class="col-xl-4 col-md-6 col-lg-4">
+											<div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+													<h3 class="footer_title">
+															Subscribe
+													</h3>
+													<form action="post_data.php" method="post" class="newsletter_form">
+															<input type="text" name="email" placeholder="Enter your mail">
+															<button type="submit" value="submit" name="save_subscribe">Subscribe</button>
+													</form>
+													<p class="newsletter_text">Subcribe your email for more exciting deals and offers!!</p>
+											</div>
+									</div>
+
+									<div class="col-xl-3 col-md-5 col-lg-3">
+											<div class="footer_widget wow fadeInUp" data-wow-duration="1.3s" data-wow-delay=".6s">
+
+
+													 <img width="60%" src="img/6.svg" alt="">
+											</div>
+									</div>
+
+
+					</div>
+			</div>
+			<div class="copy-right_text wow fadeInUp" data-wow-duration="1.4s" data-wow-delay=".3s">
+					<div class="container">
+							<div class="footer_border"></div>
+							<div class="row">
+									<div class="col-xl-12">
+											<p class="copy_right text-center">
+
+													Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved by Car Rental
+											</p>
+									</div>
+							</div>
+					</div>
+			</div>
+
+
+	</footer>
 
 
 
